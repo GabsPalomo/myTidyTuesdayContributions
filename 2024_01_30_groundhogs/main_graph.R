@@ -67,7 +67,7 @@ ggplot(yearly_pred)+
   scale_y_continuous(limits = c(1955, 2025), breaks = seq(1955, 2025, by = 5))+
   scale_x_continuous(limits = c(-25, 25), 
                      breaks = seq(-25, 25, by=5))+
-  labs(title = "What did the groundhog saw? ",
+  labs(title = "What does the groundhog say? ",
        subtitle = stringr::str_wrap("The plot below shows the number of predictions per year that a true groundhog
                             has seen since 1955. The color represents what the majority predicted:
                             'long winter' or 'early spring'. If there is no color then there was a tie.  
