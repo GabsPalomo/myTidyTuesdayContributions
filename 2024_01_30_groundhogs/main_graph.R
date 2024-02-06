@@ -83,11 +83,12 @@ ggplot(yearly_pred)+
                                   colour = "Black",
                                   face = "bold",
                                   margin = unit(c(0, 0, 0, 0), "cm")),
+        plot.title.position = "plot", 
         plot.subtitle = element_text(size = 12,
                                      lineheight = 1.1,
                                      hjust = 0,
                                      colour = "gray20",
-                                     margin = unit(c(0.5, 0, 0.5, 0), "cm")), 
+                                     margin = unit(c(0.5, 0, 0.8, 0), "cm")), 
         axis.text = element_text(size = 12), 
         axis.title = element_text(size =14), 
         legend.text = element_text(size = 14)) -> my_plot
