@@ -1,11 +1,8 @@
 library(tidytuesdayR)
 library(dplyr)
 library(ggplot2)
-library(grid)
-library(rworldmap)
-library(purrr)
 library(maps)
-library(sf) 
+# library(sf) 
 
 ## Define vector with all European countries: ##
 nds <- c("Norway", "Denmark", "Sweden")
@@ -37,12 +34,29 @@ tuesdata <- tuesdata[[1]]
 
 sites <- readxl::read_excel('./2024_02_06_heritage/data/whc-sites-2023.xls')
 names(sites)
+
 sites_nds <- sites |> 
-  filter(states_name_en %in% nds)
+  filter(states_name_en %in% nds) |> 
+  mutate(result = case_when(date_inscribed <= 2004 ~ 'yr2004', 
+                            date_inscribed > 2004 ~ 'yr2023', 
+                            .default = 'TEST')) |>
+  select(name_en, short_description_en, justification_en, date_inscribed, longitude, 
+         latitude, area_hectares, category, states_name_en, region_en, result)
+
+sites_nds <- rbind(sites_nds,
+                   sites_nds %>% 
+                     filter(result == 'yr2004') |> 
+                     mutate(result = 'yr2023'))
+
+
+test <- test_nds |> 
+  group_by(states_name_en, result) |> 
+  summarise(n=n())
 
 main_map + 
   geom_point(data = sites_nds,
                aes(x=longitude, 
                    y=latitude, 
                    group = states_name_en,
-                   color = states_name_en))
+                   color = states_name_en))+
+  facet_grid(~result)
