@@ -21,6 +21,11 @@ tuesdata <- tuesdata[[1]] |>
 sysfonts::font_add_google("Poppins", "poppins")
 showtext::showtext_auto()
 
+## Flags color palette 
+flag_cp <- c('#C8102E', '#00205B', '#006AA7')
+
+cp <- c('#5f0f40', '#e36414', '#0f4c5c')
+
 # using the package waffle, let's create a waffle plot 
 # faceted by year 
 ggplot(tuesdata, 
@@ -29,7 +34,7 @@ ggplot(tuesdata,
   coord_equal() +
   theme_void()+
   geom_waffle(color = "black", 
-              alpha = 0.6,
+              alpha = 0.8,
               size = 1, 
               n_rows = 5,
               # make_proportional = TRUE, 
@@ -37,7 +42,7 @@ ggplot(tuesdata,
               height = 0.8, 
               width = 0.8) +
   facet_wrap(~year) +
-  scale_fill_manual(values = c('#5f0f40', '#e36414', '#0f4c5c'))+
+  scale_fill_manual(values = flag_cp)+
   labs(title = "Scandinavian national heritage sites",
        subtitle = stringr::str_wrap("According to UNESCO, a world heritage site is a landmark
                             with legal protection. Designated by UNESCO for having cultural, 
