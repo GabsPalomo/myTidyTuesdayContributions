@@ -22,7 +22,7 @@ sysfonts::font_add_google("Poppins", "poppins")
 showtext::showtext_auto()
 
 ## Flags color palette 
-flag_cp <- c('#C8102E', '#00205B', '#006AA7')
+flag_cp <- c( '#00205B', '#C8102E','#006AA7')
 
 cp <- c('#5f0f40', '#e36414', '#0f4c5c')
 
@@ -42,7 +42,7 @@ ggplot(tuesdata,
               height = 0.8, 
               width = 0.8) +
   facet_wrap(~year) +
-  scale_fill_manual(values = flag_cp)+
+  scale_fill_manual(values = flag_cp, breaks = c('Norway', 'Denmark', 'Sweden'))+
   labs(title = "Scandinavian national heritage sites",
        subtitle = stringr::str_wrap("According to UNESCO, a world heritage site is a landmark
                             with legal protection. Designated by UNESCO for having cultural, 
@@ -54,18 +54,18 @@ ggplot(tuesdata,
        caption = "\n#TidyTuesday 2024 - week 06 | @gabbspalomo") +
   theme(strip.text.x = element_text(hjust = 0.5), 
         plot.margin = margin(0.5, 0, 0.5, 0, 'cm'),
-        plot.title = element_text(size = 54, color = "Black", family = 'poppins', face = "bold",
+        plot.title = element_text(size = 62, color = "Black", family = 'poppins', face = "bold",
                                   margin = unit(c(0, 0, 0, 0), "cm")),
         plot.title.position = "plot", 
-        plot.subtitle = element_text(size = 32, lineheight = 0.5, hjust = 0, colour = "gray20",
+        plot.subtitle = element_text(size = 40, lineheight = 0.5, hjust = 0, colour = "gray20",
                                      margin = unit(c(0.5, 0, 0.8, 0), "cm")), 
-        plot.caption = element_text(size = 28, color = 'gray30', family = 'poppins', hjust = 0),
+        plot.caption = element_text(size = 32, color = 'gray30', family = 'poppins', hjust = 0),
         plot.caption.position = "plot",
         legend.position = 'bottom', 
         legend.title = element_blank(), 
-        legend.text = element_text(size = 30, family = 'poppins'),
+        legend.text = element_text(size = 38, family = 'poppins'),
         legend.box.margin=margin(1,0,0,0, 'cm'),
-        strip.text = element_text(size = 48, face = 'bold', family = 'poppins')) -> waffle_plot
+        strip.text = element_text(size = 54, face = 'bold', family = 'poppins')) -> waffle_plot
 
 waffle_plot
 
@@ -73,8 +73,8 @@ waffle_plot
 ggsave(filename = here::here('2024_02_06_heritage', 'plots', 'waffle_plot.jpg'), 
        plot = waffle_plot, 
        scale = 1.5, 
-       width = 15, 
-       height = 10, 
+       width = 16, 
+       height = 12, 
        units = 'cm', 
        dpi = 300)  
 
