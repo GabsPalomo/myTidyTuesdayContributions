@@ -1,6 +1,10 @@
 # myTidyTuesdayContributions
 
-This repository contains my contributions to the [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) weekly challenge. I post my plots on **X** [@gabbspalomo](https://twitter.com/gabbspalomo), **Fosstodon** [https://fosstodon.org/@gabbspalomo](https://fosstodon.org/@gabbspalomo), and on **Blue Sky** [@gabspalomo.bsky.social](@gabspalomo.bsky.social)
+This repository contains my contributions to the [#TidyTuesday](https://github.com/rfordatascience/tidytuesday) weekly challenge. I post my plots on:  
+
+  - **X** [@gabbspalomo](https://twitter.com/gabbspalomo)
+  - **Fosstodon** [https://fosstodon.org/@gabbspalomo](https://fosstodon.org/@gabbspalomo)
+  - **Blue Sky** [@gabspalomo.bsky.social](@gabspalomo.bsky.social)
 
 # 2024
 
