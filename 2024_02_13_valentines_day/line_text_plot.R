@@ -4,6 +4,8 @@ library(geomtextpath)
 library(dplyr)
 library(tidyr)
 library(ggsci) # Color pallettes 
+library(cowplot)
+library(extrafont)
 
 ## Data
 tuesdata <- tidytuesdayR::tt_load('2024-02-13')
@@ -31,7 +33,6 @@ historical_long <- historical_spending |>
                                                 'Jewelry')))
 
 # Fonts 
-library(extrafont)
 font_import()
 y
 loadfonts(device = "win")
@@ -178,11 +179,8 @@ subtitle <- ggdraw() +
     plot.background = element_rect(fill = bg, color = bg,linewidth = 5))
 
 ## Combine plots -------------------------------------------------------
-library(cowplot)
 bp <- plot_grid(plot02, plot01, nrow = 1, rel_widths = c(2, 2))
 final_plot <- plot_grid(title, subtitle, bp, nrow = 3, rel_heights = c(0.1, 0.1, 0.6))
-
-final_plot
 
 ggsave(filename = here::here('2024_02_13_valentines_day', 'plots', 'final_plot.jpg'), 
        plot = final_plot, 
