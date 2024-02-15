@@ -119,10 +119,15 @@ ggplot(age_long)+
                                                  'Cards', 
                                                  'Candy'))+
   theme_classic()+
+  labs(caption = "\n#TidyTuesday 2024 - week 06 | @gabbspalomo")+
   theme(legend.position = "none", 
         legend.title = element_blank(),
         legend.background = element_rect(fill = bg),
         legend.text = element_text(color = '#ffaaaa', family = 'Verdana', size = 10),
+        plot.caption = element_text(size = 12, 
+                                    color = '#ffaaaa', 
+                                    family = 'Verdana', 
+                                    hjust = -0.3),
         plot.margin = margin(0.5, 1, 0.5, 0.5, 'cm'), 
         panel.background = element_rect(fill = bg), 
         plot.background = element_rect(fill = bg, color = bg,linewidth = 5), 
