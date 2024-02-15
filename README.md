@@ -12,3 +12,4 @@ This repository contains my contributions to the [#TidyTuesday](https://github.c
 |:----------------:|:----------------:|:----------------:|:----------------:|
 |  5   | `2024-01-30` | [Groundhog predictions](https://github.com/GabsPalomo/myTidyTuesdayContributions/blob/main/2024_01_30_groundhogs/plots/my_plot.jpg)  | Dumbbell plot |
 |  6   | `2024-02-06` | [World heritage sites](https://github.com/GabsPalomo/myTidyTuesdayContributions/blob/main/2024_02_06_heritage/plots/waffle_plot.jpg) |  Waffle plot  |
+|  7   | `2024-02-13` | [Valentine's Day Consumer Data](https://github.com/GabsPalomo/myTidyTuesdayContributions/blob/main/2024_02_13_valentines_day/plots/final_plot.jpg) |  Stacked bars and line with text plot  |
