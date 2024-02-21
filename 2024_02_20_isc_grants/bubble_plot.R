@@ -57,7 +57,7 @@ ggplot(data = final_data) +
                 ycirc, 
                 size = total_funded, 
                 label = year), 
-            size = 18, 
+            size = 20, 
             family = 'josefinsans', 
             fontface = 'bold',
             color = 'white') +
@@ -70,32 +70,33 @@ ggplot(data = final_data) +
   theme_void() + 
   theme(legend.position="none", 
         plot.title = element_text(family = 'josefinsans', 
-                                  size = 80, 
+                                  size = 86, 
                                   face = 'bold', 
                                   color = 'gray20'), 
         plot.subtitle = element_text(family = 'montserrat', 
                                      color = 'gray20',
-                                     size = 34, 
+                                     size = 40, 
                                      lineheight = 0.5, 
                                      hjust = 0, 
                                      vjust = 0, 
-                                     margin = margin(t=0.3, b = 0.3, unit = 'in')), 
-        plot.caption = element_text(size = 34, 
+                                     margin = margin(t=0.3, unit = 'in')), 
+        plot.caption = element_text(size = 38, 
                                     color = 'gray40',
-                                    margin = margin(b=0.3, unit = 'in'))) -> my_plot
+                                    margin = margin(b=0.3, unit = 'in')), 
+        plot.margin = margin(t=0.5, unit = 'in')) -> my_plot
 
 ggsave(filename = here::here('2024_02_20_isc_grants', 'plots', 'my_plot.jpg'), 
        plot = my_plot, 
        scale = 0.6,
-       width = 12, 
-       height = 12, 
+       width = 14, 
+       height = 14, 
        units = 'in', 
        dpi = 300)  
 
 
 ## Interactive plot using ggplotly 
-ggplotly(p, 
-         tooltip = 'text') %>% 
-  layout(hoverlabel = list(font = list(size = 20)))
+# ggplotly(my_plot, 
+#          tooltip = 'text') %>% 
+#   layout(hoverlabel = list(font = list(size = 20)))
 
 
