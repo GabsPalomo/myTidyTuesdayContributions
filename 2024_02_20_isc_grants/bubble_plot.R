@@ -38,10 +38,10 @@ sysfonts::font_add_google("Poppins", "poppins")
 sysfonts::font_add_google("Josefin Sans", "josefinsans")
 showtext::showtext_auto()
 
-subt <- "The R Consortium ISC has been awarding grants since 2016. 
-The plot shows the total amount of funding awarded each year. In 2018 the 
-total amount awarded was $289,972 whereas in recent years it has been 
-significantly less with only $51,015 in 2023 and $111,000 in 2022.\n"
+subt <- "<b>The R Consortium ISC</b> has been awarding grants since 2016.<br> 
+The plot shows the total amount of funding awarded each year. In 2018 the<br> 
+total amount awarded was <b style = 'color:#251c4a;'>$289,972</b> whereas in recent years it has been<br> 
+significantly less with only <b style = 'color:#4c9a77;'>$51,015</b> in 2023 and <b style = 'color:#78adb7;'>$111,000</b> in 2022.<br>"
 
 ggplot(data = final_data) + 
   geom_polygon(aes(x, 
@@ -57,7 +57,7 @@ ggplot(data = final_data) +
                 ycirc, 
                 size = total_funded, 
                 label = year), 
-            size = 20, 
+            size = 22, 
             family = 'josefinsans', 
             fontface = 'bold',
             color = 'white') +
@@ -70,16 +70,16 @@ ggplot(data = final_data) +
   theme_void() + 
   theme(legend.position="none", 
         plot.title = element_text(family = 'josefinsans', 
-                                  size = 86, 
+                                  size = 90, 
                                   face = 'bold', 
                                   color = 'gray20'), 
-        plot.subtitle = element_text(family = 'montserrat', 
-                                     color = 'gray20',
-                                     size = 40, 
-                                     lineheight = 0.5, 
-                                     hjust = 0, 
-                                     vjust = 0, 
-                                     margin = margin(t=0.3, unit = 'in')), 
+        plot.subtitle = element_markdown(family = 'montserrat', 
+                                         colour = 'gray20',
+                                         size = 42, 
+                                         lineheight = 0.5, 
+                                         hjust = 0, 
+                                         vjust = 0, 
+                                         margin = margin(t=0.3, unit = 'in')), 
         plot.caption = element_text(size = 38, 
                                     color = 'gray40',
                                     margin = margin(b=0.3, unit = 'in')), 
